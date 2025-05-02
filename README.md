@@ -7,6 +7,26 @@ Most of the logic is quite obvious but the edge case of todays date being 1st Ma
 29th February on a leap year and 28th February on "normal" years. The function `daysinmonth` uses the `ncal` command to work out how may days are
 in a given month in a given year.
 
+## Pre-requisites
+
+The `ncal` command must be installed.
+
+If running:
+
+```
+which ncal
+```
+
+does not output the full pathname of the ncal command (e.g. `/bin/ncal` or `/usr/bin/ncal`) then install the ncal package.
+
+For Ubuntu/Debian style systems this will be:
+
+```
+sudo apt install ncal
+```
+
+Other Linux variants will have a different package (such as `yum` or `dnf`) - refer to your Linux distribution documentation.
+
 ## Example run
 
 Running:
@@ -49,6 +69,34 @@ gives:
 ```
 
 as 2024 was a leap year and so there were 29 days in February that year.
+
+## Bugs
+
+The main bug is that if the year 1752 is involved then incorrect results are likely - especially around dates in September 1752.
+
+If you run:
+
+```
+ncal 9 1752
+```
+
+The output will be:
+
+```
+    September 1752
+Mo    18 25
+Tu  1 19 26
+We  2 20 27
+Th 14 21 28
+Fr 15 22 29
+Sa 16 23 30
+Su 17 24
+```
+
+The days 3rd September to 13th September 1752 inclusive are missing. The script logic in `yesterday.sh` does not handle this "strangeness". I welcome suggestions on
+how to make the script handle this date range correctly :-]
+
+
 
 ## Nice example of a shell script in general
 
