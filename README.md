@@ -25,7 +25,7 @@ For Ubuntu/Debian style systems this will be:
 sudo apt install ncal
 ```
 
-Other Linux variants will have a different package (such as `yum` or `dnf`) - refer to your Linux distribution documentation.
+Other Linux variants will have a different package manager such as `yum` or `dnf` - refer to your Linux distribution documentation.
 
 ## Example run
 
