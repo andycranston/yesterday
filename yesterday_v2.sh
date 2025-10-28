@@ -118,7 +118,7 @@ done
 
 if [ "$prev" != "" ]
 then
-  # if we have a previous day going back one day is year
+  # if we have a previous day going back one day is easy
   day=$prev
 else
   # its the first day of the month - more logic required
