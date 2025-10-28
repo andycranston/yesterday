@@ -94,8 +94,13 @@ Su 17 24
 ```
 
 The days 3rd September to 13th September 1752 inclusive are missing. The script logic in `yesterday.sh` does not handle this "strangeness". I welcome suggestions on
-how to make the script handle this date range correctly :-]
+how to make the script handle this date range correctly :-] (*)
 
+(*) I got round to handling the month of September in 1752. Take a look at:
+
+https://github.com/andycranston/yesterday/blob/main/yesterday_v2.sh
+
+in this repo.
 
 
 ## Nice example of a shell script in general
