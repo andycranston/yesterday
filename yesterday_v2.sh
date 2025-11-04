@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# @(!--#) @(#) yesterday_v2.sh, sversion 0.1.0, fversion 002, 28-october-2025
+# @(!--#) @(#) yesterday_v2.sh, sversion 0.1.0, fversion 002, 04-november-2025
 #
 # a script to print out yesterdays date in a year, month and day format
 #
@@ -56,17 +56,27 @@ then
   day=`date '+%d'`
 elif [ $# -eq 3 ]
 then
-  validnumber "$1" year
-  validnumber "$2" month
-  validnumber "$3" day
-
-  year=`expr $1 + 0`
-  month=`expr $2 + 0`
-  day=`expr $3 + 0`
+  year=$1
+  month=$2
+  day=$3
 else
   echo "$scriptname: usage: $scriptname year month day" 1>&2
   exit 1
 fi
+
+echo $year $month $day
+
+year=`expr $year + 0`
+month=`expr $month + 0`
+day=`expr $day + 0`
+
+echo $year $month $day
+
+validnumber "$year" year
+validnumber "$month" month
+validnumber "$day" day
+
+echo $year $month $day
 
 if [ $year -lt 1 ]
 then
